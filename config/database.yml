@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: health_care35981_production
+  database: #health_care35981_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
