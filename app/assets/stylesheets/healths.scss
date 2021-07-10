@@ -1,0 +1,129 @@
+/* 画面上部の帯部分 */
+.title-contents {
+  width: 100vw;
+  background-image: image-url('health_main4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 15vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+}
+
+.title-contents h2 {
+  font-size: 4vh;
+}
+
+.title-contents p {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+/* 画面上部の帯部分 */
+
+/* メインの部分 */
+.health-main-contents{
+  padding: 5vh 15vw;
+}
+
+.health-article-contents>.title {
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.health-article-contents>.title::after {
+  content: '';
+  width: 30vw;
+  height: 0.5vh;
+  background-color: rgb(18, 204, 101);
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+}
+
+.health-recipe-contents>.title {
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin: 5vh 0;
+  position: relative;
+}
+
+.health-recipe-contents>.title::after {
+  content: '';
+  width: 35vw;
+  height: 0.5vh;
+  background-color: green;
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+}
+
+.health-foodstaff-contents>.title {
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin: 5vh 0;
+  position: relative;
+}
+
+.health-foodstaff-contents>.title::after {
+  content: '';
+  width: 15vw;
+  height: 0.5vh;
+  background-color: rgb(18, 204, 101);
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+}
+/* メインの部分 */
+
+/* メイン中身*/
+
+.health-article-ranking{
+  width: 80vw;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  transform: translateX(-10%);
+}
+
+.health-recipe-ranking{
+  width: 80vw;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  transform: translateX(-10%);
+}
+
+.health-foodstaff-ranking{
+  width: 80vw;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  transform: translateX(-10%);
+}
+
+.ranking-num {
+  font-size: 30px;
+  margin: 40px 30px;
+}
+
+.ranking-img{
+  height: 10rem;
+}
+
+
+.ranking-info{
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+.ranking-name{
+  text-decoration: none;
+  color: #333333;
+  margin-right: 3vw;
+}
