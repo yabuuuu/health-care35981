@@ -1,0 +1,97 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <div class='title-contents'>
+      <h2>自分の健康を管理しよう</h2>
+      <p>自分の健康見える形でコントロールしていきませんか？</p>
+      <p>あなたの、健康の維持そして、健康へ近づく力に。</p>
+  </div>
+
+  <div class='health-main-contents'>
+    <div class='health-article-contents'>
+      <h2 class='title'>健康とは何か？記事からチェック</h2>
+      <% n = 1%>
+      <% 3.times do |i|%>
+      <%# @articles.each do |item| %>
+        <div class='health-article-ranking'>
+          <div class='unique-box'>
+            <p class='ranking-num'><%= n + i %></p>
+          </div>
+          <%= link_to '#' do %>
+            <div class='ranking-img-content'>
+              <%= image_tag "health_main.jpg", class: "ranking-img" %>
+            </div>
+          <%end%>
+          <%= link_to '#' do %>
+            <div class='ranking-info'>
+              <h3 class='ranking-name'>
+                <i class="fa fa-upload" aria-hidden="true"><%= '内容タイトル' %></i>
+              </h3>
+              <p class='ranking-name'>
+                <i class="fa fa-heart" aria-hidden="true">0</i>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <%# end %>
+    </div>
+    <div class='health-recipe-contents'>
+      <h2 class='title'>体の中から健康に、ピックアップレシピ</h2>
+      <% n = 1%>
+      <% 3.times do |i|%>
+      <%# @articles.each do |item| %>
+        <div class='health-recipe-ranking'>
+          <div class='unique-box'>
+            <p class='ranking-num'><%= n + i %></p>
+          </div>
+          <%= link_to '#' do %>
+            <div class='ranking-img-content'>
+              <%= image_tag "health_main.jpg", class: "ranking-img" %>
+            </div>
+          <%end%>
+          <%= link_to '#' do %>
+            <div class='ranking-info'>
+              <h3 class='ranking-name'>
+                <i class="fa fa-upload" aria-hidden="true"><%= '内容タイトル' %></i>
+              </h3>
+              <p class='ranking-name'>
+                <i class="fa fa-heart" aria-hidden="true">0</i>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <%# end %>
+    </div>
+    <div class='health-foodstaff-contents'>
+      <h2 class='title'>食材それぞれの力</h2>
+      <% n = 1%>
+      <% 3.times do |i|%>
+      <%# @articles.each do |item| %>
+        <div class='health-foodstaff-ranking'>
+          <div class='unique-box'>
+            <p class='ranking-num'><%= n + i %></p>
+          </div>
+          <%= link_to '#' do %>
+            <div class='ranking-img-content'>
+              <%= image_tag "mushrooms.jpg", class: "ranking-img" %>
+            </div>
+          <%end%>
+          <%= link_to '#' do %>
+            <div class='ranking-info'>
+              <h3 class='ranking-name'>
+                <i class="fa fa-upload" aria-hidden="true"><%= '内容タイトル' %></i>
+              </h3>
+              <p class='ranking-name'>
+                <i class="fa fa-heart" aria-hidden="true">0</i>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <%# end %>
+    </div>
+  </div>
+
+</div>

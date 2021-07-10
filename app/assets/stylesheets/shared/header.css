@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.health-icon {
+  width: 13vw;
+  margin: 0%;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.lists-left {
+  display: flex;
+  list-style: none;
+  min-width: 200px;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+.lists-left a:hover,
+.lists-left .current {
+  border-bottom: 2px solid #00AA00;
+  padding-bottom: .5rem;
+  background: none;
+}
+
+
+.home-list {
+  text-decoration: none;
+  color: #333333;
+  margin-right: 3vw;
+}
+
+.article-list {
+  text-decoration: none;
+  color: #333333;
+  margin-right: 3vw;
+}
+
+.recipe-list {
+  text-decoration: none;
+  color: #333333;
+  margin-right: 3vw;
+}
+
+.foodstaff-list {
+  text-decoration: none;
+  color: #333333;
+  margin-right: 3vw;
+}
+
+.notice-list {
+  text-decoration: none;
+  color: #333333;
+}
+
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  color: #333333;
+  margin-bottom: 2vh;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
+
+.search-bar-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.search-form {
+  width: 50vw;
+  height: 5vh;
+  display: flex;
+}
+
+.search-form>.input-box {
+  width: 100%;
+  height: 5vh;
+  padding-left: 10px;
+  border: 1px solid #BBBBBB;
+}
+
+.search-button {
+  width: 5vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #00AA00;
+  padding: 8px;
+}
+
+.search-icon {
+  width: 100%;
+}
+
+
+
+
