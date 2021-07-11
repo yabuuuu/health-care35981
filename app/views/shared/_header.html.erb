@@ -13,11 +13,11 @@
       <ul class='lists-right'>
       <% if user_signed_in? %>
         <li>
-          <%= link_to '#' do %>
+          <%= link_to users_show_path do %>
             <%= image_tag current_user.image.variant(resize: '50x50'), class: 'message-image' if current_user.image.attached? %>
           <%end%>
         </li>
-        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li> 
+        <li><%= link_to current_user.nickname, users_show_path, class: "user-nickname" %></li> 
         <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "logout" %></li> 
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
