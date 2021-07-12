@@ -3,10 +3,14 @@
 }
 
 .top-page-header {
+  background-color: white;
   width: 100vw;
   padding: 2vh 10vw;
   display: flex;
   flex-direction: column;
+  position: sticky;
+  z-index: 100;
+  top: 0;
 }
 
 .header-contents {
@@ -81,6 +85,11 @@
   align-items: flex-end;
   color: #333333;
   margin-bottom: 2vh;
+}
+
+.user-image {
+  border-radius: 50%;
+  margin: 5px;
 }
 
 .user-nickname {

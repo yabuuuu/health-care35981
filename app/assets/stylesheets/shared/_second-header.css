@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+.second-header {
+  background-color: white;
+  padding: 2vh 10vw;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+.second-lists-left {
+  display: flex;
+  list-style: none;
+  min-width: 200px;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+.second-lists-left a:hover {
+  border-bottom: 2px solid #00AA00;
+  padding-bottom: .5rem;
+  background: none;
+}
+
+.user-image {
+  border-radius: 50%;
+}

@@ -33,6 +33,23 @@
   padding: 5vh 15vw;
 }
 
+.health-ideal-contents>.title {
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.health-ideal-contents>.title::after {
+  content: '';
+  width: 12vw;
+  height: 0.5vh;
+  background-color: rgb(18, 204, 101);
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+}
+
 .health-article-contents>.title {
   font-size: 3.5vh;
   font-weight: bold;
@@ -61,7 +78,7 @@
   content: '';
   width: 35vw;
   height: 0.5vh;
-  background-color: green;
+  background-color: rgb(18, 204, 101);
   position: absolute;
   bottom: -10px;
   left: 10%;

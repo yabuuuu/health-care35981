@@ -1,3 +1,92 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+.user-contents{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-main-contents {
+  margin-bottom: 3rem;
+  background: white;
+  border-radius: 10px;
+}
+
+
+.user-name{
+  font-size: 18px;
+  margin: 5vh 3vw;
+}
+/* サイドbox */
+
+.user-side-contents {
+  color: black;
+  margin: 10px 10vw;
+}
+
+.side-box {
+  margin-bottom: 4rem;
+  border: 1px solid lightgreen;
+  outline: 2px solid #ccc;
+  outline-offset: 4px;
+  border-radius: 6px;
+  padding: .875rem;
+  position: relative;
+}
+
+.side-box::before {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.side-box a:hover {
+  color: green;
+}
+
+/* 見出し */
+.side-box h3 {
+  font-size: 1.875rem;
+  letter-spacing: .1rem;
+  text-align: center;
+  margin: .875rem 0 1.125rem;
+}
+
+/* リスト */
+.side-box li {
+  border-bottom: 1px dashed #ccc;
+  padding: 1rem .25rem;
+  display: flex;
+  
+}
+.side-box li:first-child {
+  padding-top: 0;
+}
+.side-box li:last-child {
+  padding-bottom: .5rem;
+  border-bottom: 0;
+}
+
+.side-box li a {
+  color: black;
+  flex: 1;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.profile-user-image{
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.popular-posts {
+  position: sticky;
+}
