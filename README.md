@@ -12,18 +12,33 @@
 
 ### Association
 
-- has_many :goals
+- has_many :weights
 - has_many :user_items
 
 
-## goals テーブル
+## weights テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| day             | date       | null: false                    |
+| weight          | integer    | null: false                    |
+| user            | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :weight_goal
+
+
+## weight_goals テーブル
 
 | Column             | Type     | Options                        |
 | ------------------ | -------- | ------------------------------ |
-| goal_type_id       | integer  | null: false                    |
-| number             | integer  | null: false                    |
-| period             | integer  | null: false                    |
+| goal               | integer  | null: false                    |
+| period             | date     |                                |
 | user               | reference| null: false, foreign_key: true |
+| weight             | reference| null: false, foreign_key: true |
 
-- _idのつくinteger Typeは、アクティブハッシュを使用する。
 ### Association
+- belongs_to :user
+- has_many :weight

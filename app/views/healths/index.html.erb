@@ -9,7 +9,9 @@
   <div class='health-main-contents'>
     <div class='health-ideal-contents'>
       <h2 class='title'>理想の１日</h2>
-      <p>グラフ挿入予定</p>
+      <div class='day-chart'>
+        <%= pie_chart @data %>
+      </div>
     </div>
     <div class='health-article-contents'>
       <h2 class='title'>健康とは何か？記事からチェック</h2>

@@ -7,7 +7,8 @@
       </h3>
       <div class='user-goal-contents'>
         <h2 class='title'>グラフ</h2>
-        <p>グラフ挿入予定</p>
+        <%= line_chart @weight.group(:day).sum(:weight) %>
+
       </div>
     </div>
   </div>
@@ -38,3 +39,4 @@
     </div>
   </div>
 </div>
+<%= render "shared/footer" %>
