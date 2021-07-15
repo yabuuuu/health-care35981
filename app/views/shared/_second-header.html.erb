@@ -13,12 +13,12 @@
       <% if user_signed_in? %>
         <li>
           <div class='user-img'>
-            <%= link_to users_show_path do %>
+            <%= link_to user_path(current_user) do %>
               <%= image_tag current_user.image.variant(resize: '50x50'), class: 'user-image' if current_user.image.attached? %>
             <%end%>
           </div>
         </li>
-        <li><%= link_to current_user.nickname, users_show_path, class: "user-nickname" %></li> 
+        <li><%= link_to current_user.nickname, user_path(current_user), class: "user-nickname" %></li> 
         <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "logout" %></li> 
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>

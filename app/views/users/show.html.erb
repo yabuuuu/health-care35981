@@ -1,15 +1,56 @@
 <%= render "shared/second-header" %>
 <div class="user-contents">
   <div class="user-main-contents">
-    <div class="main-user-contents">
-      <h3 class="user-name">
-        <%= "#{current_user.nickname}さんマイページ" %>
-      </h3>
-      <div class='user-goal-contents'>
-        <h2 class='title'>グラフ</h2>
-        <%= line_chart @weight.group(:day).sum(:weight) %>
-
+    <h2 class='user-title'>新規データ入力</h2>
+    <div class='user-new-contents'>
+      <div class='user-new-weight'>
+        <ul>
+          <li><%= link_to '体重データ入力', new_weight_path, class: "user-new-list" %></li>
+          <li><%= link_to '体重目標設定', "#", class: "user-new-list" %></li>
+          <li><%= link_to '編集/削除', "#", class: "user-new-list" %><li>
+        </ul>
       </div>
+      <div class='user-new-bodyfat'>
+        <ul>
+          <li><%= link_to '体脂肪率データ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to '体脂肪率目標設定', "#", class: "user-new-list" %></li>
+          <li><%= link_to '編集/削除', "#", class: "user-new-list" %><li>
+        </ul>
+      </div>
+      <div class='user-new-exercise'>
+        <ul>
+          <li><%= link_to '運動データ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to '運動目標設定', "#", class: "user-new-list" %></li>
+          <li><%= link_to '編集/削除', "#", class: "user-new-list" %><li>
+        </ul>
+      </div>
+      <div class='user-new-cal'>
+        <ul>
+          <li><%= link_to 'カロリーデータ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to 'カロリー目標設定', "#", class: "user-new-list" %></li>
+          <li><%= link_to '編集/削除', "#", class: "user-new-list" %><li>
+        </ul>
+      </div>
+      <div class='user-new-sugar'>
+        <ul>
+          <li><%= link_to '糖質データ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to '糖質目標設定', "#", class: "user-new-list" %></li>
+          <li><%= link_to '編集/削除', "#", class: "user-new-list" %><li>
+        </ul>
+      </div>
+      <div class='user-new-other'>
+        <ul>
+          <li><%= link_to 'その他データ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to 'その他目標設定', "#", class: "user-new-list" %></li>
+          <li><%= link_to '編集/削除', "#", class: "user-new-list" %><li>
+        </ul>
+      </div>
+    </div>
+
+    <%# グラフ部分 %>
+    <div class='user-goal-contents'>
+      <h2 class='user-title'>体重グラフ</h2>
+      <%= line_chart @weight.group(:day).sum(:weight) %>
     </div>
   </div>
   
@@ -20,7 +61,7 @@
           <%= image_tag current_user.image.variant(resize: '100x100'), class: 'profile-user-image' if current_user.image.attached? %>
         </li>
         <li><a href="#">プロフィール編集</a></li>
-        <li><%="ニックネーム : #{current_user.nickname}"%></li>
+        <li><%="#{current_user.nickname}"%></li>
         <li><%="プロフィール : #{current_user.profile}"%></li>
         <li><%="誕生日 : #{current_user.birthday}"%></li>
         <%#= Date.current_user.birthday('%Y年 %m月 %d日') %>

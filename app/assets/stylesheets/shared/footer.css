@@ -1,3 +1,7 @@
+.footer {
+  width: 100vw;
+}
+
 .footer-contents {
   background-color: #00AA00;
   padding: 2vh 10vw;
@@ -8,7 +12,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
 }
 
 .footer-link {
@@ -18,7 +21,6 @@
 
 .logo-white {
   width: 10vw;
-
 }
 
 .copyright {

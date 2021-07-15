@@ -79,7 +79,6 @@
   color: #333333;
 }
 
-
 .lists-right {
   display: flex;
   list-style: none;
@@ -89,9 +88,8 @@
 }
 
 .lists-right a:hover{
-  color: #00AA00;
+  color: green;
   font-weight: bold;
-  
 }
 
 .user-image {
@@ -99,7 +97,7 @@
   margin: 5px;
 }
 
-.user-img a:hover img{
+.user-img img:hover {
   box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
   transform: scale(1.2);
   transition-duration: 0.4s;
@@ -111,7 +109,6 @@
   color: #333333;
   font-weight: bold;
 }
-
 
 .logout {
   text-decoration: none;
