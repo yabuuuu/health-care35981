@@ -22,9 +22,9 @@
 
 
     <div class="submit">
-      <%= f.submit "入力完了" ,class:"input-btn"%>
+      <%= f.submit "データ更新" ,class:"input-btn"%>
     </div>
-
   <% end %>
+  <%= button_to '削除', weight_path, method: :delete, data: {confirm: "削除しますか？"} ,class: "weight-deleat-btn" %>
 </div>
 <%= render "shared/footer" %>

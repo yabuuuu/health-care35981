@@ -27,6 +27,8 @@ class WeightsController < ApplicationController
   end
 
   def destroy
+    @weight.destroy
+    redirect_to user_path(current_user)
   end
 
   private
