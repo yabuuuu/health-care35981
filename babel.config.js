@@ -28,7 +28,6 @@ module.exports = function(api) {
       (isProductionEnv || isDevelopmentEnv) && [
         '@babel/preset-env',
         {
-          loose: true,
           forceAllTransforms: true,
           useBuiltIns: 'entry',
           corejs: 3,
@@ -57,9 +56,7 @@ module.exports = function(api) {
       [
         '@babel/plugin-transform-runtime',
         {
-          helpers: false,
-          regenerator: true,
-          corejs: false
+          helpers: false
         }
       ],
       [
