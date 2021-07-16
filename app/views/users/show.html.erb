@@ -1,6 +1,16 @@
 <%= render "shared/second-header" %>
 <div class="user-contents">
   <div class="user-main-contents">
+    <div class='user-deta-calendar'>
+      <%= month_calendar events: @weights do |date, weights| %>
+        <%= date.day %>
+        <% weights.each do |weight| %>
+        <div>
+          <%= link_to "●", edit_weight_path(weight), class: "user-weight-date" %>
+        </div>
+  <% end %>
+      <% end %>
+    </div>
     <h2 class='user-title'>新規データ入力</h2>
     <div class='user-new-contents'>
       <div class='user-new-weight'>
@@ -50,7 +60,7 @@
     <%# グラフ部分 %>
     <div class='user-goal-contents'>
       <h2 class='user-title'>体重グラフ</h2>
-      <%= line_chart @weight.group(:day).sum(:weight) %>
+      <%= line_chart @weights.group(:start_time).sum(:weight) %>
     </div>
   </div>
   

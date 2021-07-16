@@ -71,6 +71,8 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem "chartkick"
 gem 'groupdate'
+gem "simple_calendar", "~> 2.4"
+gem 'rails-i18n', '~> 6.0.0'
 
 group :production do
   gem 'unicorn', '5.4.1'
