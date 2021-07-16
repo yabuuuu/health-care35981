@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      weight:
+        weight: 体重
+        start_time: 測定日

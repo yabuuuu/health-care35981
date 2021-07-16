@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+.user-contents{
+  margin: 4vh 10vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-main-contents {
+  margin-bottom: 3rem;
+  background: white;
+  border-radius: 10px;
+}
+
+/* カレンダー */
+.user-weight-date {
+  text-decoration: none;
+  color: #D2691E;
+}
+
+.user-weight-date :hover {
+  opacity: 0.6;
+}
+/* データ入力へのリンク */
+
+.user-new-contents {
+  width: 60vw;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.user-new-weight,
+.user-new-bodyfat,
+.user-new-exercise,
+.user-new-cal,
+.user-new-sugar,
+.user-new-other {
+  width: 30%;
+  margin: 30px 0;
+}
+
+.user-new-weight {
+  border: 1px solid #D2691E;
+}
+.user-new-weight a{
+  color: #D2691E;
+  border-bottom: 1px solid #D2691E;
+}
+.user-new-weight a:hover {
+  background-color: #D2691E	;
+}
+
+.user-new-bodyfat {
+  border: 1px solid #6495ED;
+}
+.user-new-bodyfat a {
+  color: #6495ED;
+  border-bottom: 1px solid #6495ED;
+}
+.user-new-bodyfat a:hover {
+  background-color: #6495ED;
+}
+
+.user-new-exercise {
+  border: 1px solid #2E8B57;
+}
+.user-new-exercise a{
+  color: #2E8B57;
+  border-bottom: 1px solid #2E8B57;
+}
+.user-new-exercise a:hover {
+  background-color: #2E8B57;
+}
+
+.user-new-cal {
+  border: 1px solid #808000	;
+}
+.user-new-cal a{
+  color: #808000;
+  border-bottom: 1px solid #808000;
+}
+.user-new-cal a:hover{
+  background-color: #808000	;
+}
+
+.user-new-sugar {
+  border: 1px solid #9370DB;
+}
+.user-new-sugar a{
+  color: #9370DB;
+  border-bottom: 1px solid #9370DB;
+}
+.user-new-sugar a:hover{
+  background-color: #9370DB;
+}
+
+.user-new-other {
+  border: 1px solid #DB7093;
+}
+.user-new-other a{
+  color: #DB7093;
+  border-bottom: 1px solid #DB7093;
+}
+.user-new-other a:hover{
+  background-color: #DB7093;
+}
+
+.user-new-weight a:hover,
+.user-new-bodyfat a:hover,
+.user-new-exercise a:hover,
+.user-new-cal a:hover,
+.user-new-sugar a:hover,
+.user-new-other  a:hover{
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  transform: scale(1.1);
+  transition-duration: 0.4s;
+  color: #fff;
+}
+
+
+.user-new-list {
+  text-decoration: none;
+  padding: 1rem .25rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* グラフ部分 */
+.user-goal-contents {
+  width: 35%;
+}
+
+
+/* サイドbox */
+
+.user-side-contents {
+  width: 15vw;
+  color: black;
+}
+
+.side-box {
+  margin-bottom: 4rem;
+  border: 1px solid lightgreen;
+  outline: 2px solid #ccc;
+  outline-offset: 4px;
+  border-radius: 6px;
+  padding: .875rem;
+  position: relative;
+}
+
+.side-box a:hover {
+  color: green;
+}
+
+/* 見出し */
+.side-box h3 {
+  font-size: 1.875rem;
+  letter-spacing: .1rem;
+  text-align: center;
+  margin: .875rem 0 1.125rem;
+}
+
+/* リスト */
+.side-box li {
+  border-bottom: 1px dashed #ccc;
+  padding: 1rem .25rem;
+  display: flex;
+}
+
+.side-box li:first-child {
+  padding-top: 0;
+}
+
+.side-box li:last-child {
+  padding-bottom: .5rem;
+  border-bottom: 0;
+}
+
+.side-box li a {
+  color: black;
+  flex: 1;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.profile-user-image{
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.popular-posts {
+  position: sticky;
+}

@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
 <div class='main'>
-
   <div class='title-contents'>
       <h2>自分の健康を管理しよう</h2>
       <p>自分の健康見える形でコントロールしていきませんか？</p>
@@ -8,14 +7,20 @@
   </div>
 
   <div class='health-main-contents'>
+    <div class='health-ideal-contents'>
+      <h2 class='title'>理想の食事バランス</h2>
+      <div class='day-chart'>
+        <%= pie_chart @data %>
+      </div>
+    </div>
     <div class='health-article-contents'>
       <h2 class='title'>健康とは何か？記事からチェック</h2>
-      <% n = 1%>
+      <% n = 0%>
       <% 3.times do |i|%>
       <%# @articles.each do |item| %>
         <div class='health-article-ranking'>
           <div class='unique-box'>
-            <p class='ranking-num'><%= n + i %></p>
+            <p class='ranking-num'><%= n = n + 1 %></p>
           </div>
           <%= link_to '#' do %>
             <div class='ranking-img-content'>
@@ -95,3 +100,5 @@
   </div>
 
 </div>
+
+<%= render "shared/footer" %>

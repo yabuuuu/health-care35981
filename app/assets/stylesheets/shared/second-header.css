@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.second-header {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2vh 10vw;
+  border-bottom: 1px solid darkgray;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+.second-lists-left {
+  display: flex;
+  list-style: none;
+  min-width: 200px;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+.second-lists-left a:hover {
+  border-bottom: 2px solid #00AA00;
+  padding-bottom: .5rem;
+  background: none;
+}
+
+.user-image {
+  border-radius: 50%;
+}

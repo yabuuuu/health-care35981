@@ -1,0 +1,31 @@
+.footer {
+  width: 100vw;
+}
+
+.footer-contents {
+  background-color: #00AA00;
+  padding: 2vh 10vw;
+}
+
+.footer-lists {
+  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: white;
+}
+
+.logo-white {
+  width: 10vw;
+}
+
+.copyright {
+  color: white;
+  background-color: lightslategray;
+  padding: 1vh 10vw;
+  text-align: center;
+}
