@@ -66,7 +66,7 @@
     <%# グラフ部分 %>
     <div class='user-goal-contents'>
       <h2 class='user-title'>体重グラフ</h2>
-      <%= line_chart @weights.group(:start_time).sum(:weight), colors: ["#D2691E"], class: "weight-line-chart" %>
+      <%#= line_chart @weights.group(:start_time).sum(:weight), colors: ["#D2691E"], class: "weight-line-chart" %>
     </div>
     <%# グラフ部分 %>
   </div>
