@@ -2,7 +2,10 @@ ja:
   activerecord:
     attributes:
       user:
+        email: メールアドレス
+        password: パスワード
         nickname: ニックネーム
+        birthday: 生年月日
       weight:
         weight: 体重
         start_time: 測定日
