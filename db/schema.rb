@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_174735) do
+ActiveRecord::Schema.define(version: 2021_07_21_073519) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 2021_07_13_174735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weight_goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "goal", null: false
+    t.date "period"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_weight_goals_on_user_id"
+  end
+
   create_table "weights", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "start_time", null: false
     t.integer "weight", null: false
@@ -59,5 +68,6 @@ ActiveRecord::Schema.define(version: 2021_07_13_174735) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "weight_goals", "users"
   add_foreign_key "weights", "users"
 end

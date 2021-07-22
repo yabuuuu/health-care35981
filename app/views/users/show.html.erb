@@ -21,8 +21,11 @@
       <div class='user-new-weight'>
         <ul>
           <li><%= link_to '体重データ入力', new_weight_path, class: "user-new-list" %></li>
-          <li><%= link_to '体重目標設定', "#", class: "user-new-list" %></li>
-          <li><%= link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
+          <% if @weight_goal == nil  %>
+          <li><%= link_to '体重目標設定', new_weight_goal_path, class: "user-new-list" %></li>
+          <% else %>
+          <li><%= link_to '目標  編集/削除', edit_weight_goal_path(@weight_goal.id), class: "user-new-list" %><li>
+          <% end %>
         </ul>
       </div>
       <div class='user-new-bodyfat'>
@@ -66,6 +69,12 @@
     <%# グラフ部分 %>
     <div class='user-goal-contents'>
       <h2 class='user-title'>体重グラフ</h2>
+      <% unless @weight_goal == nil  %>
+      <ul>
+        <li>目標まであと<%= (@weight_goal.goal) - ( @weights[1].weight) %>kg</li>
+        <li>目標まであと<%= ((@weight_goal.period) - (Date.today)).to_i%>日</li>
+      </ul>
+      <% end %>
       <%= line_chart @weights.group(:start_time).sum(:weight), colors: ["#D2691E"], class: "weight-line-chart" %>
     </div>
     <%# グラフ部分 %>

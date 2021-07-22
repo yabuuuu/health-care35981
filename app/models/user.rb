@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many :weights
+  has_one :weight_goal
 
   validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-z\d]+\z/i }
 

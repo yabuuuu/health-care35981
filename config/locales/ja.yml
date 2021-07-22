@@ -9,3 +9,5 @@ ja:
       weight:
         weight: 体重
         start_time: 測定日
+      weight_goal:
+        goal: 目標値

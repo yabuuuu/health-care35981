@@ -57,7 +57,7 @@ Ruby, Ruby on Rails
 ### Association
 
 - has_many :weights
-- has_many :user_items
+- has_one :weight_goal
 
 
 ## weights テーブル
@@ -81,8 +81,9 @@ Ruby, Ruby on Rails
 | goal               | integer  | null: false                    |
 | period             | date     |                                |
 | user               | reference| null: false, foreign_key: true |
-| weight             | reference| null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- has_many :weight
+- has_many :weights
+
+
