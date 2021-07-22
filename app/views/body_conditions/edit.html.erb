@@ -1,0 +1,37 @@
+<%= render "shared/second-header" %>
+<div class="body-condition-main">
+  <%= form_with model: @body_condition, local: true do |f|%>
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="body-condition-date">
+      <div class="body-condition-text">
+          <span>データの種類</span>
+          <span class="indispensable">必須</span>
+      </div>
+        <%= f.collection_select(:data_content_id, DataContent.all, :id, :name, {}, {class:"select-box", id:"data-content"}) %>
+    </div>
+    
+    <div class="body-condition-date">
+      <div class="body-condition-text">
+        <span>日付</span>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.date_select :start_time %>
+    </div>
+
+    <div class="body-condition-data">
+      <div class="body-condition-text">
+        <span>計測値</span>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :body_data, class:"body-condition-input", id:"body-condition-input", placeholder:"例）55" %>
+    </div>
+
+
+    <div class="submit">
+      <%= f.submit "入力完了" ,class:"input-btn"%>
+    </div>
+  <% end %>
+  <%= button_to '削除', body_condition_path(@body_condition.id), method: :delete, data: {confirm: "削除しますか？"} ,class: "weight-deleat-btn" %>
+</div>
+<%= render "shared/footer" %>

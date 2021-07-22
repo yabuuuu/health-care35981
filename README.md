@@ -86,4 +86,29 @@ Ruby, Ruby on Rails
 - belongs_to :user
 - has_many :weights
 
+## weights テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| start_time      | date       | null: false                    |
+| weight          | integer    | null: false                    |
+| user            | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :weight_goal
+
+
+## weight_goals テーブル
+
+| Column             | Type     | Options                        |
+| ------------------ | -------- | ------------------------------ |
+| goal               | integer  | null: false                    |
+| period             | date     |                                |
+| user               | reference| null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- has_many :weights
 

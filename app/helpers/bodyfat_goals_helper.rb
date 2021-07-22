@@ -1,0 +1,2 @@
+module BodyfatGoalsHelper
+end

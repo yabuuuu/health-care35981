@@ -6,8 +6,11 @@ ja:
         password: パスワード
         nickname: ニックネーム
         birthday: 生年月日
-      weight:
-        weight: 体重
-        start_time: 測定日
       weight_goal:
         goal: 目標値
+      bodyfat_goal:
+        goal: 目標値
+      body_condition:
+        start_time: 測定日
+        body_data: 計測値
+        data_content_id: データの種類

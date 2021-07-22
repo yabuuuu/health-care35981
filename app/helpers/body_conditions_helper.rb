@@ -1,0 +1,2 @@
+module BodyConditionsHelper
+end

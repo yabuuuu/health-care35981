@@ -1,11 +1,11 @@
 <%= render "shared/second-header" %>
 <div class="weight-goal-main">
   <%= form_with model: @weight_goal, url: weight_goal_path, method: :put, local: true do |f|%>
-  <%#= render 'shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', model: f.object %>
 
     <div class="weight-goal-date">
       <div class="weight-goal-text">
-        <span>目標値</span>
+        <span>体重目標値</span>
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_field :goal, class:"weight-goal-input", id:"weight-input", placeholder:"例）55" %>
