@@ -59,13 +59,13 @@
           <% if @bodyfat_goal == nil  %>
           <li><%= link_to '体脂肪率目標設定', new_bodyfat_goal_path, class: "user-new-list" %></li>
           <% else %>
-          <li><%= link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
+          <li><%= link_to '目標  編集/削除', edit_bodyfat_goal_path(@bodyfat_goal.id), class: "user-new-list" %><li>
           <% end %>
         </ul>
       </div>
       <div class='user-new-exercise'>
         <ul>
-          <li><%= link_to '運動データ入力',  new_body_condition_path, class: "user-new-list" %></li>
+          <li><%= link_to '運動データ入力', new_body_condition_path, class: "user-new-list" %></li>
           <li><%= link_to '運動目標設定', "#", class: "user-new-list" %></li>
           <li><% link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
         </ul>
@@ -102,7 +102,7 @@
         <% if @weight_goal != nil  %>
         <ul>
           <li>目標まであと<%= (@weight_goal.goal) - ( @weights[0].body_data) %>kg</li>
-          <li>目標まであと<%= ((@weight_goal.period) - (Date.today)).to_i%>日</li>
+          <li>残り<%= ((@weight_goal.period) - (Date.today)).to_i%>日</li>
         </ul>
         <% end %>
         <%# if @weights == nil %>
@@ -114,7 +114,7 @@
         <% if @bodyfat_goal != nil  %>
         <ul>
           <li>目標まであと<%= (@bodyfat_goal.goal) - ( @bodyfats[0].body_data) %>%</li>
-          <li>目標まであと<%= ((@bodyfat_goal.period) - (Date.today)).to_i%>日</li>
+          <li>残り<%= ((@bodyfat_goal.period) - (Date.today)).to_i%>日</li>
         </ul>
         <% end %>
         <%= line_chart @bodyfats.group(:start_time).sum(:body_data), colors: ["#6495ED"], class: "bodyfat-line-chart" %>
@@ -151,7 +151,7 @@
         <li>
           <%= image_tag current_user.image.variant(resize: '100x100'), class: 'profile-user-image' if current_user.image.attached? %>
         </li>
-        <li><a href="#">プロフィール編集</a></li>
+        <li><a href= edit_user_registration_path(@user.id) >プロフィール編集</a></li>
         <li><%="#{current_user.nickname}"%></li>
         <li><%="プロフィール : #{current_user.profile}"%></li>
         <li><%="誕生日 : #{current_user.birthday}"%></li>

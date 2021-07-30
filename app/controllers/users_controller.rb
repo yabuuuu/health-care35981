@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @body_conditions = @user.body_conditions.order(data_content_id: :ASC)
+    @body_conditions = @user.body_conditions.order(data_content_id: :DESC)
     @weight_goal = @user.weight_goal
     @weights = @user.body_conditions.where(data_content_id: '2').order(start_time: :DESC)
     @bodyfat_goal = @user.bodyfat_goal
