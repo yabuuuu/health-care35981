@@ -142,7 +142,44 @@
 
     </div>
     <%# グラフ部分 %>
+
+    <%# BMI表示部分 %>
+    <h2 class='user-title'>今のBMIは？  BMI計算</h2>
+    <div class ='user-bmis'>
+      <div class='user-bmi-text'>
+        <span>身長・体重を入力して下さい</span>
+      </div>
+      <div>
+        <div class='user-bmi-content'>
+          <div class='user-cm-text'>
+            <span>身長</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= text_field :user_cm, class:"user-cm-input", id:"user-cm", placeholder:"例）158" %>
+          <span class="user-cm">cm</span>
+          
+          <div class='user-kg-text'>
+            <span>体重</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= text_field :user_kg, class:"user-kg-input", id:"user-kg", placeholder:"例）58" %>
+          <span class="user-kg">kg</span>
+        </div>
+
+        <div class="price-content">
+          <span>BMI値</span>
+          <span>
+            あなたのBMIは、<span id='add-user-bmi'></span>です。
+          </span>
+          <br><span class='user-bmi-sub'>
+            BMIは22が統計上最も健康的で病気が少ないと言われています
+          </span>
+        </div>
+      </div>
+    </div>
+    <%# BMI表示部分%>
   </div>
+
   
   <%# サイドバー部分 %>
   <div class="user-side-contents">
