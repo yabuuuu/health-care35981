@@ -4,13 +4,10 @@ Rails.application.routes.draw do
 
   resources :healths, only: [:index]
   resources :users, only: :show
-  resources :body_conditions, only: [:new, :create, :edit, :update, :destroy] 
 
-  resources :weights, only: [:new, :create, :edit, :update, :destroy] 
+  resources :body_conditions, only: [:new, :create, :edit, :update, :destroy]
   resources :weight_goals, only: [:new, :create, :edit, :update, :destroy]
-
-  
   resources :bodyfat_goals, only: [:new, :create, :edit, :update, :destroy]
 
-
+  resources :articles
 end
