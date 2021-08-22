@@ -14,20 +14,58 @@
   border-radius: 10px;
 }
 
+.user-title {
+  font-size: 1.875rem;
+  margin-bottom: 10px;
+  border-bottom: double 5px #00AA00;
+  padding-bottom: .5rem;
+  width: 50vw;
+}
+
 /* カレンダー */
-.user-weight-date {
+.user-deta-calendar {
+  width: 60vw;
+  margin: 0 15px 50px 0;
+}
+.user-body-data2 {
   text-decoration: none;
   color: #D2691E;
 }
 
-.user-weight-date :hover {
+.user-body-data3 {
+  text-decoration: none;
+  color: #6495ED;
+}
+
+.user-body-data4 {
+  text-decoration: none;
+  color: #2E8B57;
+}
+
+.user-body-data5 {
+  text-decoration: none;
+  color: #808000;
+}
+
+.user-body-data6 {
+  text-decoration: none;
+  color: #9370DB;
+}
+
+.user-body-data7 {
+  text-decoration: none;
+  color: #DB7093;
+}
+
+.user-body-condition :hover {
   opacity: 0.6;
 }
+
 /* データ入力へのリンク */
 
 .user-new-contents {
   width: 60vw;
-  margin-bottom: 25px;
+  margin: 25px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -133,10 +171,18 @@
 
 
 /* グラフ部分 */
-.user-goal-contents {
-  width: 35%;
+.user-graphs {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
 }
 
+.user-graph {
+  height: 400px;
+  width: 400px;
+  margin: 3vw;
+}
 
 /* サイドbox */
 

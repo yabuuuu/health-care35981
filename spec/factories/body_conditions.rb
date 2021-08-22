@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :weight do
+  factory :body_condition do
     
   end
 end

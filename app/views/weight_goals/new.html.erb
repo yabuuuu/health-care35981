@@ -1,0 +1,28 @@
+<%= render "shared/second-header" %>
+<div class="weight-goal-main">
+  <%= form_with model: @weight_goal, local: true do |f|%>
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="weight-goal-date">
+      <div class="weight-goal-text">
+        <span>目標値</span>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :goal, class:"weight-goal-input", id:"weight-input", placeholder:"例）55" %>
+      <span class="weight-goal-kg">kg</span>
+    </div>
+
+    <div class="weight-goal-data">
+      <div class="weight-goal-text">
+        <span>目標達成日</span>
+      </div>
+      <%= f.date_select :period %>
+    </div>
+
+    <div class="submit">
+      <%= f.submit "入力完了" ,class:"input-btn"%>
+    </div>
+
+  <% end %>
+</div>
+<%= render "shared/footer" %>

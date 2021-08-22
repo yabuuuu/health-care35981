@@ -3,13 +3,38 @@
   <div class="user-main-contents">
 
     <%# カレンダー部分 %>
+    <h2 class='user-title'>カレンダー</h2>
     <div class='user-deta-calendar'>
-      <%= month_calendar events: @weights do |date, weights| %>
+      <%= month_calendar events: @body_conditions do |date, body_conditions| %>
         <%= date.day %>
-        <% weights.each do |weight| %>
-          <div class='user-weight-date'>
-            <%= link_to "●", edit_weight_path(weight), class: "user-weight-date" %>
-          </div>
+        <% body_conditions.each do |body_condition|%>
+          <ul>
+          <% if (body_condition.data_content.id) == 2 %>
+            <li class='user-body-condition'>
+            <%= link_to "●体重", edit_body_condition_path(body_condition), class: "user-body-data2" %>
+            </li>
+          <% elsif (body_condition.data_content.id) == 3 %>
+            <li class='user-body-condition'>
+            <%= link_to "●体脂肪率", edit_body_condition_path(body_condition), class: "user-body-data3" %>
+            </li>
+          <% elsif (body_condition.data_content.id) == 4 %>
+            <li class='user-body-condition'>
+            <%= link_to "●運動", edit_body_condition_path(body_condition), class: "user-body-data4" %>
+            </li>
+          <% elsif (body_condition.data_content.id) == 5 %>
+            <li class='user-body-condition'>
+            <%= link_to "●カロリー", edit_body_condition_path(body_condition), class: "user-body-data5" %>
+            </li>
+          <% elsif (body_condition.data_content.id) == 6 %>
+            <li class='user-body-condition'>
+            <%= link_to "●糖質", edit_body_condition_path(body_condition), class: "user-body-data6" %>
+            </li>
+          <% elsif (body_condition.data_content.id) == 7 %>
+            <li class='user-body-condition'>
+            <%= link_to "●その他", edit_body_condition_path(body_condition), class: "user-body-data7" %>
+            </li>
+          <% end %>
+          </ul>
         <% end %>
       <% end %>
     </div>
@@ -20,56 +45,141 @@
     <div class='user-new-contents'>
       <div class='user-new-weight'>
         <ul>
-          <li><%= link_to '体重データ入力', new_weight_path, class: "user-new-list" %></li>
-          <li><%= link_to '体重目標設定', "#", class: "user-new-list" %></li>
-          <li><%= link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
+          <li><%= link_to '体重データ入力', new_body_condition_path, class: "user-new-list" %></li>
+          <% if @weight_goal == nil  %>
+          <li><%= link_to '体重目標設定', new_weight_goal_path, class: "user-new-list" %></li>
+          <% else %>
+          <li><%= link_to '目標  編集/削除', edit_weight_goal_path(@weight_goal.id), class: "user-new-list" %><li>
+          <% end %>
         </ul>
       </div>
       <div class='user-new-bodyfat'>
         <ul>
-          <li><%= link_to '体脂肪率データ入力', "#", class: "user-new-list" %></li>
-          <li><%= link_to '体脂肪率目標設定', "#", class: "user-new-list" %></li>
-          <li><%= link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
+          <li><%= link_to '体脂肪率データ入力', new_body_condition_path, class: "user-new-list" %></li>
+          <% if @bodyfat_goal == nil  %>
+          <li><%= link_to '体脂肪率目標設定', new_bodyfat_goal_path, class: "user-new-list" %></li>
+          <% else %>
+          <li><%= link_to '目標  編集/削除', edit_bodyfat_goal_path(@bodyfat_goal.id), class: "user-new-list" %><li>
+          <% end %>
         </ul>
       </div>
       <div class='user-new-exercise'>
         <ul>
-          <li><%= link_to '運動データ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to '運動データ入力', new_body_condition_path, class: "user-new-list" %></li>
           <li><%= link_to '運動目標設定', "#", class: "user-new-list" %></li>
-          <li><%= link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
+          <li><% link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
         </ul>
       </div>
       <div class='user-new-cal'>
         <ul>
-          <li><%= link_to 'カロリーデータ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to 'カロリーデータ入力',  new_body_condition_path, class: "user-new-list" %></li>
           <li><%= link_to 'カロリー目標設定', "#", class: "user-new-list" %></li>
-          <li><%= link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
+          <li><% link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
         </ul>
       </div>
       <div class='user-new-sugar'>
         <ul>
-          <li><%= link_to '糖質データ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to '糖質データ入力',  new_body_condition_path, class: "user-new-list" %></li>
           <li><%= link_to '糖質目標設定', "#", class: "user-new-list" %></li>
-          <li><%= link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
+          <li><% link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
         </ul>
       </div>
       <div class='user-new-other'>
         <ul>
-          <li><%= link_to 'その他データ入力', "#", class: "user-new-list" %></li>
+          <li><%= link_to 'その他データ入力',  new_body_condition_path, class: "user-new-list" %></li>
           <li><%= link_to 'その他目標設定', "#", class: "user-new-list" %></li>
-          <li><%= link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
+          <li><% link_to '目標  編集/削除', "#", class: "user-new-list" %><li>
         </ul>
       </div>
     </div>
     <%# 新規データ入力部分 %>
 
     <%# グラフ部分 %>
-    <div class='user-goal-contents'>
-      <h2 class='user-title'>体重グラフ</h2>
-      <%= line_chart @weights.group(:start_time).sum(:weight), colors: ["#D2691E"], class: "weight-line-chart" %>
+    <h2 class='user-title'>データグラフ</h2>
+    <div class ='user-graphs'>
+      <div class='user-graph'>
+        <h2 class='user-graph-title'>体重グラフ</h2>
+        <% if @weight_goal != nil  %>
+        <ul>
+          <li>目標まであと<%= (@weight_goal.goal) - ( @weights[0].body_data) %>kg</li>
+          <li>残り<%= ((@weight_goal.period) - (Date.today)).to_i%>日</li>
+        </ul>
+        <% end %>
+        <%# if @weights == nil %>
+        <%= line_chart @weights.group(:start_time).sum(:body_data), colors: ["#D2691E"], class: "weight-line-chart" %>
+      </div>
+
+      <div class='user-graph'>
+        <h2 class='user-graph-title'>体脂肪率グラフ</h2>
+        <% if @bodyfat_goal != nil  %>
+        <ul>
+          <li>目標まであと<%= (@bodyfat_goal.goal) - ( @bodyfats[0].body_data) %>%</li>
+          <li>残り<%= ((@bodyfat_goal.period) - (Date.today)).to_i%>日</li>
+        </ul>
+        <% end %>
+        <%= line_chart @bodyfats.group(:start_time).sum(:body_data), colors: ["#6495ED"], class: "bodyfat-line-chart" %>
+      </div>
+
+      <div class='user-graph'>
+        <h2 class='user-graph-title'>運動グラフ</h2>
+        <%= line_chart @exercises.group(:start_time).sum(:body_data), colors: ["#2E8B57"], class: "exercise-line-chart" %>
+      </div>
+
+      <div class='user-graph'>
+        <h2 class='user-graph-title'>カロリーデータグラフ</h2>
+        <%= line_chart @cals.group(:start_time).sum(:body_data), colors: ["#808000"], class: "cal-line-chart" %>
+      </div>
+
+      <div class='user-graph'>
+        <h2 class='user-graph-title'>糖質グラフ</h2>
+        <%= line_chart @sugars.group(:start_time).sum(:body_data), colors: ["#9370DB"], class: "suger-line-chart" %>
+      </div>
+
+      <div class='user-graph'>
+        <h2 class='user-graph-title'>その他グラフ</h2>
+        <%= line_chart @others.group(:start_time).sum(:body_data), colors: ["#DB7093"], class: "other-line-chart" %>
+      </div>
+
     </div>
     <%# グラフ部分 %>
+
+    <%# BMI表示部分 %>
+    <h2 class='user-title'>今のBMIは？  BMI計算</h2>
+    <div class ='user-bmis'>
+      <div class='user-bmi-text'>
+        <span>身長・体重を入力して下さい</span>
+      </div>
+      <div>
+        <div class='user-bmi-content'>
+          <div class='user-cm-text'>
+            <span>身長</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= text_field :user_cm, class:"user-cm-input", id:"user-cm", placeholder:"例）158" %>
+          <span class="user-cm">cm</span>
+          
+          <div class='user-kg-text'>
+            <span>体重</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= text_field :user_kg, class:"user-kg-input", id:"user-kg", placeholder:"例）58" %>
+          <span class="user-kg">kg</span>
+        </div>
+
+        <div class="price-content">
+          <span>BMI値</span>
+          <span>
+            あなたのBMIは、<span id='add-user-bmi'></span>です。
+          </span>
+          <br><span class='user-bmi-sub'>
+            BMIは22が統計上最も健康的で病気が少ないと言われています
+          </span>
+        </div>
+      </div>
+    </div>
+    <%# BMI表示部分%>
   </div>
+
   
   <%# サイドバー部分 %>
   <div class="user-side-contents">
@@ -78,7 +188,7 @@
         <li>
           <%= image_tag current_user.image.variant(resize: '100x100'), class: 'profile-user-image' if current_user.image.attached? %>
         </li>
-        <li><a href="#">プロフィール編集</a></li>
+        <li><a href= edit_user_registration_path(@user.id) >プロフィール編集</a></li>
         <li><%="#{current_user.nickname}"%></li>
         <li><%="プロフィール : #{current_user.profile}"%></li>
         <li><%="誕生日 : #{current_user.birthday}"%></li>

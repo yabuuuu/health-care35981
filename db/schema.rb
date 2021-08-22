@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_174735) do
+ActiveRecord::Schema.define(version: 2021_07_22_095050) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,25 @@ ActiveRecord::Schema.define(version: 2021_07_13_174735) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "body_conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "data_content_id", null: false
+    t.date "start_time", null: false
+    t.integer "body_data", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_body_conditions_on_user_id"
+  end
+
+  create_table "bodyfat_goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "goal", null: false
+    t.date "period"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bodyfat_goals_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,16 +67,17 @@ ActiveRecord::Schema.define(version: 2021_07_13_174735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "weights", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "start_time", null: false
-    t.integer "weight", null: false
+  create_table "weight_goals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "goal", null: false
+    t.date "period"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["start_time"], name: "index_weights_on_start_time", unique: true
-    t.index ["user_id"], name: "index_weights_on_user_id"
+    t.index ["user_id"], name: "index_weight_goals_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "weights", "users"
+  add_foreign_key "body_conditions", "users"
+  add_foreign_key "bodyfat_goals", "users"
+  add_foreign_key "weight_goals", "users"
 end
