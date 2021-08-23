@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   resources :weight_goals, only: [:new, :create, :edit, :update, :destroy]
   resources :bodyfat_goals, only: [:new, :create, :edit, :update, :destroy]
 
-  resources :articles
+  resources :articles do
+    collection do
+      get 'search'
+    end
+  end
 end

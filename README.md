@@ -23,6 +23,7 @@ Health Care
 # DEMO
 
 ### トップページ
+/app/assets/images/my_page.jpg
 ### 新規登録ページ
 ### マイページ
 
@@ -90,9 +91,6 @@ VSCode
 ### Association
 
 - belongs_to :user
-- belongs_to :weight_goal
-- belongs_to :bodyfat_goal
-- belongs_to :weight_goal
 
 
 ## weight_goals テーブル

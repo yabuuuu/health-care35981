@@ -1,0 +1,30 @@
+<%= render "shared/second-header" %>
+<div class="contents row">
+  <div class="container">
+    <h3>健康に関する記事投稿</h3>
+    <%= form_with(model: @article, local: true) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+      <div class="form-group">
+        <%= f.label :name, "記事イメージ画像" %><br />
+        <%= f.file_field :image, class: 'input-article' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :name, "記事タイトル" %><br />
+        <%= f.text_area :article, class:"input-article", id:"article", placeholder:"タイトル", maxlength:"20" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :name, "記事" %><br />
+        <%= f.text_area :text, class:"input-article", id:"text", placeholder:"内容" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :name, "今回の記事で得られる効果など" %><br />
+        <%= f.text_area :improvement, class:"input-article", id:"improvement" %>
+      </div>
+
+        <%= f.submit "入力完了" ,class:"input-btn"%>
+    <% end %>
+  </div>
+</div>
