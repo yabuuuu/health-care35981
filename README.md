@@ -23,9 +23,12 @@ Health Care
 # DEMO
 
 ### トップページ
-/app/assets/images/my_page.jpg
+![top_psge](https://user-images.githubusercontent.com/85031007/130393396-2e28f0c5-947d-4ebb-bb0c-490139c6fa10.jpg)
+
 ### 新規登録ページ
 ### マイページ
+![my_page](https://user-images.githubusercontent.com/85031007/130393409-b277b7d6-55ff-477c-a2ed-aa1436158215.jpg)
+
 
 # 工夫したポイント
 
