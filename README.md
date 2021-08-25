@@ -23,8 +23,23 @@ Health Care
 # DEMO
 
 ### トップページ
-### 新規登録ページ
+![top_psge](https://user-images.githubusercontent.com/85031007/130393396-2e28f0c5-947d-4ebb-bb0c-490139c6fa10.jpg)
+
+新規登録・またはログインすることでマイページへの移動ができるようになります。
+また、未実装の部分も多いですが記事のページやレシピページへのリンクもヘッダーにあります。
+ページをスクロールしてもヘッダーが常にページ上部に来るように使いやすいよう工夫しました。
+
 ### マイページ
+![my_page](https://user-images.githubusercontent.com/85031007/130393409-b277b7d6-55ff-477c-a2ed-aa1436158215.jpg)
+
+マイページでは、入力したデータをグラフ形式で見ることができます。
+また、データの新規入力ページへのリンクや編集・削除へのパスもあります。
+
+### データ新規登録ページ
+![new_page](https://user-images.githubusercontent.com/85031007/130393713-194bcba0-d0a7-4b6d-aa3c-7e403fa3a170.jpg)
+
+マイページから、新しく様々なデータを入力する画面です。
+
 
 # 工夫したポイント
 
@@ -90,9 +105,6 @@ VSCode
 ### Association
 
 - belongs_to :user
-- belongs_to :weight_goal
-- belongs_to :bodyfat_goal
-- belongs_to :weight_goal
 
 
 ## weight_goals テーブル

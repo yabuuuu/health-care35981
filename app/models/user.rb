@@ -5,10 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :image
-  has_many :weights
-  has_one :weight_goal
   has_many :body_conditions
+  has_one :weight_goal
   has_one :bodyfat_goal
+  has_many :articles
 
   validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-z\d]+\z/i }
 
