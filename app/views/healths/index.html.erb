@@ -16,6 +16,18 @@
     <div class='health-article-contents'>
       <h2 class='title'>健康とは何か？記事からチェック</h2>
       <% n = 0%>
+        <% @articles.first(3).each do |article| %>
+          <div class="card">
+            <%= link_to image_tag( article.image, class: :card__img ),"#", method: :get  %>
+              <div class="card__body">
+                <%= link_to article.article, "#", methood: :get, class: :card__title%>
+                <p class="card__summary">
+                  <%= article.improvement %>
+                </p>
+                <%= link_to "by #{article.user.nickname}","#", class: :card__user %>
+              </div>
+          </div>
+        <% end %>
       <% 3.times do |i|%>
       <%# @articles.each do |item| %>
         <div class='health-article-ranking'>
